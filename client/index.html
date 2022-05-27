@@ -6,6 +6,7 @@
   <body class="container">
     <button id="complimentButton">Get a compliment</button>
     <button id="fortuneButton">Get a fortune</button>
+    <button id="magic8BallButton">Ask Magic 8 Ball</button>
     <button id="coolPeopleButton">Get a list of cool people</button>
     <h1>Cool People</h1>
     <hr>
@@ -14,8 +15,15 @@
     <hr>
     <br>
     <h4>Are you cool? Add your name!</h4>
-    <form>
-      <input type="text" placeholder="Enter name here">
+    <form id="coolForm">
+      <input id="enterCool" type="text" placeholder="Enter name here">
+      <button type="submit">Submit</button>
+    </form>
+    <h4>Still cool, but you changed your name recently? No problem!</h4>
+    <form id="changeForm">
+      <input id="enterOld" type="text" placeholder="Enter old name here">
+      <input id="enterChange" type="text" placeholder="Enter new name here">
+      <button type="submit">Submit</button>
     </form>
 
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>

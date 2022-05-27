@@ -1,4 +1,4 @@
-let coolPeople = ["Thai Tran"]
+let coolPeople = ["Thai Tran"];
 
 module.exports = {
   getCompliment: (req, res) => {
@@ -31,10 +31,49 @@ module.exports = {
     res.status(200).send(randomFortune);
   },
 
+  getAnswer: (req, res) => {
+    const responses = [
+      "As I see it, yes.",
+      "Ask again later.",
+      "Better not tell you now.",
+      "Cannot predict now.",
+      "Concentrate and ask again.",
+      "Don’t count on it.",
+      "It is certain.",
+      "It is decidedly so.",
+      "Most likely.",
+      "My reply is no.",
+      "My sources say no.",
+      "Outlook not so good.",
+      "Outlook good.",
+      "Reply hazy, try again.",
+      "Signs point to yes.",
+      "Very doubtful.",
+      "Without a doubt.",
+      "Yes.",
+      "Yes – definitely.",
+      "You may rely on it."
+    ];
+
+    // choose random compliment
+    let randomIndex = Math.floor(Math.random() * responses.length);
+    let randomResponse = responses[randomIndex];
+
+    res.status(200).send(randomResponse);
+  },
+
   getCoolPeople: (req, res) => {
-
-
     res.status(200).send(coolPeople);
-    console.log("cool")
-  }
+    console.log("cool");
+  },
+
+  addCoolPerson: (req, res) => {
+    console.log("hit");
+    coolPeople.push(req.body.name);
+    res.status(200).send(coolPeople);
+  },
+
+//   changeName: (req, res) => {
+//       for(let i = 0; i < coolPeople.length; i++) 
+//   }
 };
